@@ -51,25 +51,14 @@ h2{
 .custom-ul-none{
     list-style-type: none;
 }
-.bold-me{
-    font-weight: bold;
-}
-.orange-me{
-    color: orange;
-}
-.red-me{
-    color: red;
-}
-.green-me{
-    color: green;
-}
-.blue-me{
-    color: blue;
-}
+
 h1{
     font-size: 24px;
 }
-
+.about{
+   color: #282828;
+    font-size: 14px;
+}
 .doc-desc-url{
     background: #f4f4f4;
     line-height: 24px;
@@ -100,4 +89,26 @@ h1{
 .delete::before{
     content: "DELETE ";
     color: #ed4b48;
+}
+
+.email-input{
+    background: #f4f4f4;
+    line-height: 24px;
+    border: 1px solid #d4d4d4;
+    color: #282828;
+    border-radius: 3px;
+    font-size: 14px;
+    padding: 4px 8px;
+}
+.email-submit{
+    background: #f4f4f4;
+    line-height: 24px;
+    border: 1px solid #d4d4d4;
+    color: #282828;
+    border-radius: 3px;
+    font-size: 14px;
+    padding: 4px 8px;
+}
+.email-submit:hover{
+    cursor: pointer;
 }

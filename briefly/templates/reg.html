@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
 
 {% block app_content %}
+<hr>
     <h2>Enter e-mail</h2>
     <form action="/regme" method="POST">
-        <input type="email" placeholder="e-mail" name="emailaddress" required>
-        <input type="submit" value="Send">
+        <input type="email" placeholder="e-mail" name="emailaddress" class="email-input" required>
+        <input type="submit" value="Send" class="email-submit">
     </form>
 {% endblock %}
