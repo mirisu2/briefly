@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+    <title>Title</title>
+</head>
+<body>
+<div class="content">
+    <h1>All data was scraped from <a href="https://briefly.ru/" target="_blank"><span class="url">Briefly.ru</span></a> site</h1>
+    <ul class="menu">
+        <li><a href="{{ url_for('index') }}">Home</a></li>
+        <li><a href="{{ url_for('about') }}">About</a></li>
+        <li><a href="{{ url_for('api') }}">API</a></li>
+        <li><a href="{{ url_for('reg') }}">Get API key</a></li>
+    </ul>
+    {% for message in get_flashed_messages() %}
+        <div class="flash">{{ message }}</div>
+    {% endfor %}
+    {% block app_content %}{% endblock %}
+
+</div>
+
+</body>
+</html>

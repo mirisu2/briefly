@@ -1,0 +1,103 @@
+body{
+    font-family: Open Sans,sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.content{
+    width: 660px;
+}
+a{
+    color: black;
+    text-decoration: none;
+}
+a:hover{
+    color: red;
+}
+.letters{
+    font-family: "Times New Roman", Times, serif;
+    display: flex;
+    flex-direction: row;
+    font-size: 20px;
+}
+.letter{
+    margin-right: 10px;
+}
+.letter:hover{
+    color: red;
+    cursor: pointer;
+}
+.active{
+    color: red;
+}
+.custom-ul{
+    list-style-type: circle;
+}
+h2{
+    margin-bottom: 8px;
+}
+.flash{
+    color: red;
+}
+.url{
+    border-bottom: 1px black dotted;
+}
+.url:hover{
+    border-bottom: 1px red dotted;
+}
+.custom-ul-square{
+    list-style-type: square;
+}
+.custom-ul-none{
+    list-style-type: none;
+}
+.bold-me{
+    font-weight: bold;
+}
+.orange-me{
+    color: orange;
+}
+.red-me{
+    color: red;
+}
+.green-me{
+    color: green;
+}
+.blue-me{
+    color: blue;
+}
+h1{
+    font-size: 24px;
+}
+
+.doc-desc-url{
+    background: #f4f4f4;
+    line-height: 24px;
+    border: 1px solid #d4d4d4;
+    color: #282828;
+    border-radius: 3px;
+    font-size: 14px;
+    padding: 4px 8px;
+    word-break: break-all;
+    width: 100%;
+}
+.delete, .put, .post, .get, .pm-markdown{
+    color: #282828;
+    font-size: 14px;
+}
+.get::before{
+    content: "GET ";
+    color: #3eb63e;;
+}
+.post::before{
+    content: "POST ";
+    color: #f5a623;
+}
+.put::before{
+    content: "PUT ";
+    color: #4a90e2;
+}
+.delete::before{
+    content: "DELETE ";
+    color: #ed4b48;
+}

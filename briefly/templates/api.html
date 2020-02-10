@@ -1,0 +1,136 @@
+{% extends 'base.html' %}
+
+{% block app_content %}
+<hr>
+<h1>API:</h1>
+
+<h1>Overview</h1>
+<p class="pm-markdown">API was created for training purposes. Source code can be found on <a href="https://github.com/mirisu2/briefly" target="_blank" class="url">GitHub</a>.</p>
+
+<h1>Authentication</h1>
+<p class="pm-markdown">Before you start using this API, you should get API key.</p>
+
+<h1>Error Codes</h1>
+<p class="pm-markdown">400 - {'error': 'Bad Request'}</p>
+<p class="pm-markdown">403 - {'error': 'The request header does not have an API access key'}</p>
+<p class="pm-markdown">403 - {'error': 'Forbidden'}</p>
+<p class="pm-markdown">404 - {'error': 'Not Found'}</p>
+<p class="pm-markdown">405 - {'error': 'Method Not Allowed'}</p>
+<p class="pm-markdown">429 - {'error': 'Too Many Requests'}</p>
+<p class="pm-markdown">500 - {'error': 'Duplicate entry'}</p>
+
+<h1>Rate limit</h1>
+<p class="pm-markdown">20 requests per second per ip address</p>
+<hr>
+
+<!-- GET all -->
+<h1 class="get">http://briefly.h744.host/api/v1/authors</h1>
+<div class="doc-desc-url">https://briefly.h744.host/api/v1/authors</div>
+<div class="pm-markdown">
+    <p>Get list of authors</p>
+    <p>Response: JSON</p>
+<pre>
+{
+  "number_of_records": 24,
+  "authors": [
+    {
+      "author_fullname": "Александр Трифонович Твардовский",
+      "author_url": "https://briefly.ru/tvardovskij/",
+      "id": 1019
+    },
+    ...
+    {
+      "author_fullname": "Алексей Николаевич Толстой",
+      "author_url": "https://briefly.ru/tolstoian/",
+      "id": 1379
+    }
+  ]
+}
+</pre>
+</div>
+<hr>
+
+<!-- GET by id -->
+<h1 class="get">https://briefly.h744.host/api/v1/authors/id</h1>
+<div class="doc-desc-url">https://briefly.h744.host/api/v1/authors/id</div>
+<div class="pm-markdown">
+    <p>Get author by id</p>
+    <p>Response: JSON</p>
+<pre>
+{
+  "author":
+    {
+      "author_fullname": "Александр Трифонович Твардовский",
+      "author_url": "https://briefly.ru/tvardovskij/",
+      "id": 1019
+    }
+}
+</pre>
+</div>
+<hr>
+
+
+<!-- PUT -->
+<h1 class="put">https://briefly.h744.host/api/v1/authors/id</h1>
+<div class="doc-desc-url">https://briefly.h744.host/api/v1/authors/id</div>
+<div class="pm-markdown">
+    <p>Update author's information</p>
+<pre>
+{
+  "id": 1019,
+  "author_fullname": "Александр Трифонович Твардовский",
+  "author_url": "https://briefly.ru/tvardovskij/"
+}
+ </pre>
+    <p>Response: JSON</p>
+if success:
+<pre>
+    {'Status': 'Success'} [200]
+</pre>
+if fail:
+<pre>
+    {'Error': 'Not Found'} [404]
+</pre>
+</div>
+<hr>
+
+<!-- POST -->
+<h1 class="post">https://briefly.h744.host/api/v1/authors/id</h1>
+<div class="doc-desc-url">https://briefly.h744.host/api/v1/authors/id</div>
+<div class="pm-markdown">
+    <p>Post new author</p>
+<pre>
+{
+  "author_fullname": "Александр Трифонович Твардовский",
+  "author_url": "https://briefly.ru/tvardovskij/"
+}
+ </pre>
+    <p>Response: JSON</p>
+if success:
+<pre>
+  {'Status': 'Success', 'author_id': id} [200]
+</pre>
+if fail:
+<pre>
+  {'error': 'Duplicate entry'} [500]
+</pre>
+</div>
+<hr>
+
+<!-- DELETE -->
+<h1 class="delete">https://briefly.h744.host/api/v1/authors/id</h1>
+<div class="doc-desc-url">https://briefly.h744.host/api/v1/authors/id</div>
+<div class="pm-markdown">
+    <p>Delete author</p>
+    <p>Response: JSON</p>
+if success:
+<pre>
+  {'Status': 'Success'} [200]
+</pre>
+if fail:
+<pre>
+  {'Error': 'Not Found'} [404]
+</pre>
+</div>
+
+{% endblock %}

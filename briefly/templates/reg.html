@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block app_content %}
+    <h2>Enter e-mail</h2>
+    <form action="/regme" method="POST">
+        <input type="email" placeholder="e-mail" name="emailaddress" required>
+        <input type="submit" value="Send">
+    </form>
+{% endblock %}
